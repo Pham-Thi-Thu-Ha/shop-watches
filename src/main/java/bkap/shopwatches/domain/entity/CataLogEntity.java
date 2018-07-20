@@ -1,5 +1,9 @@
 package bkap.shopwatches.domain.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -7,22 +11,34 @@ import java.util.List;
 @Table(name = "catalogg")
 public class CataLogEntity {
 
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter
+    @Setter
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "catalogId")
     private Integer catalogId;
 
+    @Getter
+    @Setter
     @Column(name = "catalogName")
     private String catalogName;
 
-
+    @Getter
+    @Setter
     @Column(name = "catalogPriority")
     private Integer catalogPriority;
 
+    @Getter
+    @Setter
     @Column(name = "catalogStatus")
     private byte catalogStatus;
 
-    @OneToMany(mappedBy = "cataLogEntity",fetch = FetchType.LAZY)
-    private List<CataLogEntity> cataLogEntities;
 
+
+    @Setter
+    @Getter
+    @OneToMany(mappedBy = "productCataLogEntity", fetch = FetchType.LAZY)
+    private List<ProductEntity> productEntities;
 
 }

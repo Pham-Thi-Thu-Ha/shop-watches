@@ -2,7 +2,7 @@
 <suite name="TestAll">
     <test name="case1">
         <classes>
-            <!---->
+            <class name="testNG.TestNG"></class>
         </classes>
     </test>
 </suite>

@@ -3,6 +3,7 @@ package bkap.shopwatches.utils;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import java.io.File;
 import java.util.Map;
 
 
@@ -12,6 +13,7 @@ public class HibernateUtil {
 
     private static SessionFactory buildSessionFactory() {
         try {
+            File f = new File("/home/rin/hibernate.cfg.xml");
             return new Configuration().configure().buildSessionFactory();
         } catch (Throwable e) {
             System.out.println(e);
