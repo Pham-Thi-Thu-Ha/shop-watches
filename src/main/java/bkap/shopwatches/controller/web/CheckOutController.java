@@ -11,11 +11,11 @@ import java.io.IOException;
 /**
  * @author Rin-DTS
  */
-@WebServlet("/web-home.html")
-public class HomeController extends HttpServlet {
+@WebServlet("/check-out.html")
+public class CheckOutController  extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher rd=req.getRequestDispatcher("/views/web/home.jsp");
+        RequestDispatcher rd=req.getRequestDispatcher("/views/web/checkout.jsp");
         rd.forward(req,resp);
     }
 

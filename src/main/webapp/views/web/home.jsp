@@ -1,122 +1,208 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@include file="/common/taglib.jsp"%>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<c:url var="webSingleProduct" value="/products.html" >
+    <c:param name="type" value="single"></c:param>
+</c:url>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title><fmt:message key="label.home" bundle="${lang}"/></title>
+    <title>Home</title>
 </head>
 <body>
-<!--Carousel
-==================================================-->
-<div id="myCarousel" class="carousel slide">
-    <div class="carousel-inner">
+<div class="bnr" id="home">
+    <div  id="top" class="callbacks_container">
+        <ul class="rslides" id="slider4">
+            <li>
+                <img src="/template/web/images/bnr-1.jpg" alt=""/>
+            </li>
+            <li>
+                <img src="/template/web/images/bnr-2.jpg" alt=""/>
+            </li>
+            <li>
+                <img src="/template/web/images/bnr-3.jpg" alt=""/>
+            </li>
+        </ul>
+    </div>
+    <div class="clearfix"> </div>
+</div>
+<!--banner-ends-->
+<!--Slider-Starts-Here-->
+<script src="/template/web/js/responsiveslides.min.js"></script>
+<script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+        // Slideshow 4
+        $("#slider4").responsiveSlides({
+            auto: true,
+            pager: true,
+            nav: true,
+            speed: 500,
+            namespace: "callbacks",
+            before: function () {
+                $('.events').append("<li>before event fired.</li>");
+            },
+            after: function () {
+                $('.events').append("<li>after event fired.</li>");
+            }
+        });
 
-        <div class="active item">
-            <div class="container">
-                <div class="row">
+    });
+</script>
+<!--End-slider-script-->
+<!--about-starts-->
+<div class="about">
+    <div class="container">
+        <div class="about-top grid-1">
+            <div class="col-md-4 about-left">
+                <figure class="effect-bubba">
+                    <img class="img-responsive" src="/template/web/images/abt-1.jpg" alt=""/>
+                    <figcaption>
+                        <h2>Nulla maximus nunc</h2>
+                        <p>In sit amet sapien eros Integer dolore magna aliqua</p>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="col-md-4 about-left">
+                <figure class="effect-bubba">
+                    <img class="img-responsive" src="/template/web/images/abt-2.jpg" alt=""/>
+                    <figcaption>
+                        <h4>Mauris erat augue</h4>
+                        <p>In sit amet sapien eros Integer dolore magna aliqua</p>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="col-md-4 about-left">
+                <figure class="effect-bubba">
+                    <img class="img-responsive" src="/template/web/images/abt-3.jpg" alt=""/>
+                    <figcaption>
+                        <h4>Cras elit mauris</h4>
+                        <p>In sit amet sapien eros Integer dolore magna aliqua</p>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!--about-end-->
+<!--product-starts-->
+<div class="product">
+    <div class="container">
+        <div class="product-top">
+            <div class="product-one">
+                <div class="col-md-3 product-left">
 
-                    <div class="span6">
-
-                        <div class="carousel-caption">
-                            <h1>tùng lâm</h1>
-                            <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <a class="btn btn-large btn-primary" href="#">Sign up today</a>
+                    <div class="product-main simpleCart_shelfItem">
+                        <a href="${webSingleProduct}" class="mask"><img class="img-responsive zoom-img" src="/template/web/images/p-1.png" alt="" /></a>
+                        <div class="product-bottom">
+                            <h3>Smart Watches</h3>
+                            <p>Explore Now</p>
+                            <h4><a class="item_add" href="#"><i></i></a> <span class=" item_price">$ 329</span></h4>
                         </div>
-
+                        <div class="srch">
+                            <span>-50%</span>
+                        </div>
                     </div>
-
-                    <div class="span6"> <img src="img/slide/slide1.jpg"></div>
-
                 </div>
+                <div class="col-md-3 product-left">
+                    <div class="product-main simpleCart_shelfItem">
+                        <a href="${webSingleProduct}" class="mask"><img class="img-responsive zoom-img" src="/template/web/images/p-2.png" alt="" /></a>
+                        <div class="product-bottom">
+                            <h3>Smart Watches</h3>
+                            <p>Explore Now</p>
+                            <h4><a class="item_add" href="#"><i></i></a> <span class=" item_price">$ 329</span></h4>
+                        </div>
+                        <div class="srch">
+                            <span>-50%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 product-left">
+                    <div class="product-main simpleCart_shelfItem">
+                        <a href="${webSingleProduct}" class="mask"><img class="img-responsive zoom-img" src="/template/web/images/p-3.png"  alt="" /></a>
+                        <div class="product-bottom">
+                            <h3>Smart Watches</h3>
+                            <p>Explore Now</p>
+                            <h4><a class="item_add" href="#"><i></i></a> <span class=" item_price">$ 329</span></h4>
+                        </div>
+                        <div class="srch">
+                            <span>-50%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 product-left">
+                    <div class="product-main simpleCart_shelfItem">
+                        <a href="${webSingleProduct}" class="mask"><img class="img-responsive zoom-img" src="/template/web/images/p-4.png" alt="" /></a>
+                        <div class="product-bottom">
+                            <h3>Smart Watches</h3>
+                            <p>Explore Now</p>
+                            <h4><a class="item_add" href="#"><i></i></a> <span class=" item_price">$ 329</span></h4>
+                        </div>
+                        <div class="srch">
+                            <span>-50%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="product-one">
+                <div class="col-md-3 product-left">
+                    <div class="product-main simpleCart_shelfItem">
+                        <a href="${webSingleProduct}" class="mask"><img class="img-responsive zoom-img" src="/template/web/images/p-5.png" alt="" /></a>
+                        <div class="product-bottom">
+                            <h3>Smart Watches</h3>
+                            <p>Explore Now</p>
+                            <h4><a class="item_add" href="#"><i></i></a> <span class=" item_price">$ 329</span></h4>
+                        </div>
+                        <div class="srch">
+                            <span>-50%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 product-left">
+                    <div class="product-main simpleCart_shelfItem">
+                        <a href="${webSingleProduct}" class="mask"><img class="img-responsive zoom-img" src="/template/web/images/p-6.png" alt="" /></a>
+                        <div class="product-bottom">
+                            <h3>Smart Watches</h3>
+                            <p>Explore Now</p>
+                            <h4><a class="item_add" href="#"><i></i></a> <span class=" item_price">$ 329</span></h4>
+                        </div>
+                        <div class="srch">
+                            <span>-50%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 product-left">
+                    <div class="product-main simpleCart_shelfItem">
+                        <a href="${webSingleProduct}" class="mask"><img class="img-responsive zoom-img" src="/template/web/images/p-7.png" alt="" /></a>
+                        <div class="product-bottom">
+                            <h3>Smart Watches</h3>
+                            <p>Explore Now</p>
+                            <h4><a class="item_add" href="#"><i></i></a> <span class=" item_price">$ 329</span></h4>
+                        </div>
+                        <div class="srch">
+                            <span>-50%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 product-left">
+                    <div class="product-main simpleCart_shelfItem">
+                        <a href="${webSingleProduct}" class="mask"><img class="img-responsive zoom-img" src="/template/web/images/p-8.png" alt="" /></a>
+                        <div class="product-bottom">
+                            <h3>Smart Watches</h3>
+                            <p>Explore Now</p>
+                            <h4><a class="item_add" href="#"><i></i></a> <span class=" item_price">$ 329</span></h4>
+                        </div>
+                        <div class="srch">
+                            <span>-50%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
             </div>
         </div>
-        <div class="item">
-            <div class="container">
-                <div class="row">
-
-                    <div class="span6">
-
-                        <div class="carousel-caption">
-                            <h1>Example headline</h1>
-                            <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <a class="btn btn-large btn-primary" href="#">Sign up today</a>
-                        </div>
-
-                    </div>
-                    <div class="span6"> <img src="img/slide/slide2.jpg"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Carousel nav -->
-    <a class="carousel-control left " href="#myCarousel" data-slide="prev"><i class="icon-chevron-left"></i></a>
-    <a class="carousel-control right" href="#myCarousel" data-slide="next"><i class="icon-chevron-right"></i></a>
-    <!-- /.Carousel nav -->
-</div>
-<!-- /Carousel -->
-
-
-
-<!-- Feature
-==============================================-->
-
-<div class="row feature-box">
-    <div class="span12 cnt-title">
-        <h1>At vero eos et accusamus et iusto odio dignissimos</h1>
-        <span>Contrary to popular belief, Lorem Ipsum is not simply random text.</span>
-    </div>
-    <div class="span4">
-        <img src="img/icon3.png">
-        <h2><fmt:message key="label.guideline.listen" bundle="${lang}"/></h2>
-        <p>
-            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-        </p>
-        <a href="<c:url value="/danh-sach-huong-dan-nghe.html"/>">Read More &rarr;</a>
-    </div>
-
-    <div class="span4">
-        <img src="img/icon2.png">
-        <h2><fmt:message key="label.exercise" bundle="${lang}"/></h2>
-        <p>
-            Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            aliqua.
-        </p>
-        <c:url var="listExercise" value="/danh-sach-bai-tap.html">
-            <c:param name="pojo.type" value="listening"/>
-        </c:url>
-        <a href="${listExercise}">Read More &rarr;</a>
-    </div>
-
-    <div class="span4">
-        <img src="img/icon1.png">
-        <h2><fmt:message key="label.examination" bundle="${lang}"/></h2>
-        <p>
-            Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
-        </p>
-        <a href="<c:url value="/danh-sach-bai-thi.html"/>">Read More &rarr;</a>
     </div>
 </div>
-
-
-<!-- /.Feature -->
-
-<div class="hr-divider"></div>
-
-<!-- Row View -->
-
-
-<div class="row">
-    <div class="span6"><img src="img/responsive.png"></div>
-
-    <div class="span6">
-        <img class="hidden-phone" src="img/icon4.png" alt="">
-        <h1>Fully Responsive</h1>
-        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-        <a href="#">Read More &rarr;</a>
-    </div>
-</div>
+<!--product-end-->
 </body>
 </html>

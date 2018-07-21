@@ -11,12 +11,17 @@ import java.io.IOException;
 /**
  * @author Rin-DTS
  */
-@WebServlet("/web-home.html")
-public class HomeController extends HttpServlet {
+@WebServlet("/products.html")
+public class ProductController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher rd=req.getRequestDispatcher("/views/web/home.jsp");
-        rd.forward(req,resp);
+        RequestDispatcher rd = null;
+        String type = req.getParameter("type");
+        if (type.equalsIgnoreCase("single")) {
+            rd = req.getRequestDispatcher("/views/web/detail_product.jsp");
+        } else
+            rd = req.getRequestDispatcher("/views/web/products.jsp");
+        rd.forward(req, resp);
     }
 
     @Override

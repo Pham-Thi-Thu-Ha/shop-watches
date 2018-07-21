@@ -6,4 +6,4 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ include file="/common/taglib.jsp" %>
-<c:redirect url="/login.html"></c:redirect>
+<c:redirect url="/web-home.html"></c:redirect>
