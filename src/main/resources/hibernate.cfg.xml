@@ -5,9 +5,9 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password">vanduc93</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/watchesDB?autoReconnect=true</property>
+        <property name="hibernate.connection.username">haptt</property>
+        <property name="hibernate.connection.password">haptt</property>
+        <property name="hibernate.connection.url">jdbc:mysql://103.216.112.212:3306/watchesDB?autoReconnect=true</property>
         <property name="hibernate.connection.CharSet">utf8</property>
         <property name="hibernate.connection.characterEncoding">utf8</property>
         <property name="hibernate.connection.useUnicode">true</property>
